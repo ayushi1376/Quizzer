@@ -30,8 +30,14 @@ class QuizPage extends StatefulWidget {
 
 class _QuizPageState extends State<QuizPage> {
   List<Icon> scoreKeeper=[];
-
-
+  void checkAns(bool userpickedAns){
+    bool correctans=qb.correctAns();
+    if(userpickedAns==correctans){
+      print("user got it right");
+    }else{
+      print("user got it wrong");
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -69,12 +75,7 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 //The user picked true.
-                bool correctans=qb.correctAns();
-                if(correctans==true){
-                  print("user got it right");
-                }else{
-                  print("user got it wrong");
-                }
+
                 setState(() {
                   qb.nextque();
                 });
