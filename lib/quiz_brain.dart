@@ -1,5 +1,6 @@
 import 'questions.dart';
 class QuizBrain{
+  int _quenum=0;
   List<Question> _questionBank=[
     Question('The condition in a WHERE clause can refer to only one value.', false ),
     Question('System calls are the classical method of enabling user processes to interact with the kernel', true ),
@@ -20,11 +21,15 @@ class QuizBrain{
     Question('SQL provides the AS keyword, which can be used to assign meaningful column names to the results of queries using the SQL built-in functions.', true ),
     Question('A SELECT statement within another SELECT statement and enclosed in square brackets ([...]) is called a subquery.', false )
   ];
-
-  String getQueText(int quenum){
-    return _questionBank[quenum].quesText;
+  void nextque(){
+    if(_quenum<_questionBank.length-1){
+      _quenum++;
+    }
   }
-  bool correctAns(int quenum){
-    return _questionBank[quenum].quesAns;
+  String getQueText(){
+    return _questionBank[_quenum].quesText;
+  }
+  bool correctAns(){
+    return _questionBank[_quenum].quesAns;
   }
 }

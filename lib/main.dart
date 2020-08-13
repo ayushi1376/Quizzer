@@ -30,7 +30,7 @@ class QuizPage extends StatefulWidget {
 
 class _QuizPageState extends State<QuizPage> {
   List<Icon> scoreKeeper=[];
-  int quenum=0;
+
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +44,7 @@ class _QuizPageState extends State<QuizPage> {
                 padding: EdgeInsets.all(10.0),
               child: Center(
                 child: Text(
-                  qb.getQueText(quenum),
+                  qb.getQueText(),
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 25.0,
@@ -69,14 +69,14 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 //The user picked true.
-                bool correctans=qb.correctAns(quenum);
+                bool correctans=qb.correctAns();
                 if(correctans==true){
                   print("user got it right");
                 }else{
                   print("user got it wrong");
                 }
                 setState(() {
-                  quenum++;
+                  qb.nextque();
                 });
               },
             ),
@@ -97,14 +97,15 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 //The user picked true.
-                bool correctans=qb.correctAns(quenum);
+                bool correctans=qb.correctAns();
                 if(correctans==false){
                   print("user got it right");
                 }else{
                   print("user got it wrong");
                 }
                 setState(() {
-                  quenum++;
+
+                  qb.nextque();
                 });
               },
             ),
