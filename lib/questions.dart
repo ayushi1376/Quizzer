@@ -1,10 +1,6 @@
 class Question {
-  String quesText;
-  bool quesAns;
+  String questionText;
+  bool questionAnswer;
 
-  Question(String q, bool a){
-    quesText=q;
-    quesAns=a;
-
+  Question(this.questionText,this.questionAnswer);
   }
-}
