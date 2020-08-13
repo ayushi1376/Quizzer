@@ -9,7 +9,7 @@ class Quizzer extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.amberAccent,
+        backgroundColor: Colors.black54,
         body: SafeArea(
           child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.0),
@@ -84,6 +84,11 @@ class _QuizPageState extends State<QuizPage> {
               },
             ),
           ),
+        ),
+        Row(
+          children: <Widget>[
+
+          ],
         ),
       ],
     );
